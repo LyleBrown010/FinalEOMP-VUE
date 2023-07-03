@@ -1,1 +1,1 @@
-<template>This is the Testimonials Page</template>
+<template>This is the Testimonials Page,...</template>
