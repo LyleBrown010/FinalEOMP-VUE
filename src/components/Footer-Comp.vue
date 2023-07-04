@@ -44,7 +44,7 @@ p{
     left: 0;
     width: 100%;
     height: 20px;
-    background: url(C:\Users\Student\Development\VueJs\lylebrown-portfolio\src\assets\wave.png);
+    background: url(https://i.postimg.cc/SNFMJNkf/wave.png);
     background-size: 1000px 100px;
 }
 
