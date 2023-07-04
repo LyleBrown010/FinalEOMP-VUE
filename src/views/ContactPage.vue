@@ -34,9 +34,10 @@ export default {
 .contact-page{
     display: grid;
     grid-template-columns: auto auto;
-    margin: 5%;
-
+    margin: 2%;
+    height: 100vh;
 }
+
 .contact-form{
     padding: 10px;
     height: 80%;
