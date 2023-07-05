@@ -41,7 +41,7 @@ export default {
             return this.$store.state.skills
         },
         softSkills(){
-            return this.$store.state.softskills
+            return this.$store.state.softSkills
         }
     },
     
