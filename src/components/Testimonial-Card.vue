@@ -1,17 +1,17 @@
 <template>
-    <router-link :to="{name: 'testimonials', params:{id: testimonials.id}}" id="card" >
+    <router-link :to="{name: 'testimonial', params:{id: testimonial.id}}" id="card" >
         <div class="row">
             <div class="" id="card-product">
-                <img :src="testimonials.image" :alt="testimonials.name">
-                <h3 class="text-black">{{testimonials.name}}</h3>
-                <p class="text-black">Price: R {{testimonials.price}}</p>
+                <img :src="testimonial.image" :alt="testimonial.name">
+                <h3 class="text-black">{{testimonial.name}}</h3>
+                <p class="text-black">{{testimonial.message}}</p>
             </div>
         </div>
     </router-link>
 </template>
 <script>
 export default {
-    props: ["testimonials"]
+    props: ["testimonial"]
 }
 </script>
 
