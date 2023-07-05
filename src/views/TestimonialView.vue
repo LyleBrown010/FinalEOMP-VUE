@@ -5,7 +5,7 @@
     <div v-else> Loading ... </div>
 </template>
 <script>
-import CardComp from '@/components/Testimonial-Card'
+import CardComp from '@/components/TestimonialCard-Comp.vue'
 
 export default {
     computed: {
