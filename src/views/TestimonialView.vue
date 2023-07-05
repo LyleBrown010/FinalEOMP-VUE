@@ -17,7 +17,7 @@ export default {
         this.$store.dispatch("getTestimonials")
     },
 
-    components:{CardComp}
+    components: {CardComp}
 
 }
 </script>

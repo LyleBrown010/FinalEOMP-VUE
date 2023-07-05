@@ -17,4 +17,4 @@ export default createStore({
       .then((testimonials) => context.commit("setTestimonials", testimonials));
     }
   },
-})
+});
