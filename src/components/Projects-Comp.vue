@@ -1,7 +1,7 @@
 <template>
     <div>
-        <button>NETLIFY</button>
-        <button>GITHUB</button>
+        <a href="{{project.netlify}}"><button>NETLIFY</button></a>
+        <a href="{{project.github}}"><button>GITHUB</button></a>
     </div>
     <strong>{{project.name}}</strong>
     <img :src="project.image" :alt="project.name">
