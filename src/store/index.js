@@ -6,16 +6,23 @@ export default createStore({
   },
 
   mutations: {
-    setProjects: (state,projects) => {
-      state.projects = projects;
+    setProjects: (state,value) => {
+      state.projects = value;
     },
   },
 
   actions: {
-    getProjects: async(context) => {
-      fetch("https://lylebrown010.github.io/Data/projects.json")
-      .then ((res) => res.json())
-      .then ((projects) => context.commit("setProjects", projects));
+    async fetchProjects (context){
+      try{
+        let {projects} = await(await fetch("https://lylebrown010.github.io/Data/db.json")).json()
+        if (projects){
+          context.commit("setProjects", projects)
+        }
+        else {alert("error")}
+      }
+      catch(e){
+        console.error(error)
+      }
     }
   },
 })
