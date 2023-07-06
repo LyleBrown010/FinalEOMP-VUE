@@ -1,4 +1,5 @@
 <template>
+    <div class="contactMe">Contact Me!</div>
     <div class="contact-page">
         <div class="contact-form">
             <form action="https://formspree.io/f/xqkorzdj" method="POST" id="form">
@@ -8,7 +9,7 @@
             <input type="email" name="email">
             <label>Your Message:</label>
             <textarea name="message"></textarea><br>
-            <button id="button-submit" type="submit">Send</button>
+            <input type="submit" value="Submit"><br>
             <input type="reset" value="Reset">
             </form>
         </div>
@@ -32,11 +33,22 @@ export default {
 </script>
 
 <style scoped>
+
+label{
+    font-weight: bold;
+    float: left;
+}
+
+.contactMe{
+    font-family: 'Caprasimo', cursive;
+    font-size: 80px;
+    text-align: center;
+}
 .contact-page{
     display: grid;
     grid-template-columns: auto auto;
     margin: 2%;
-    height: 100vh;
+    height: 70vh;
 }
 
 .contact-form{
