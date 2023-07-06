@@ -6,15 +6,23 @@ export default createStore({
   },
 
   mutations: {
-    setTestimonials: (state, testimonials) => {
-      state.testimonials = testimonials; 
+    setTestimonials: (state, value) => {
+      state.testimonials = value; 
     }
   },
-  actions: {
-    getTestimonials: async(context) => {
-      fetch("https://lylebrown010.github.io/Data/testimonials.json")
-      .then((res) => res.json())
-      .then((testimonials) => context.commit("setTestimonials", testimonials));
+  actions: { 
+    async fetchTestimonials (context){
+      try {
+        let {testimonials} = await(await fetch("https://lylebrown010.github.io/Data/db.json")).json()
+        if (testimonials){
+          context.commit("setTestimonials", testimonials)
+        }
+        else {alert("error")}
+      }
+
+      catch(e){
+        console.error(error)
+      }
     }
   },
 });
