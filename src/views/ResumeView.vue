@@ -1,64 +1,91 @@
 <template>
-<div v-if="educations" class="flex-container">
-    <div v-for="education of educations" :key="education.name">
-        <div class="h-100 p-5 bg-black border border-4 border-primary rounded-3 mt-3">
-        <h2 class="fs-1 fw-bolder text-white">Education</h2><br>
-        <div class="main-timeline">
-            <div class="timeline">
-                <div class="icon"></div>
-                <div class="date-content">
-                    <div class="date-outer">
-                        <span class="date">
-                            <span class="date-start text-white">{{education.date}}</span>
-                        </span>
+<div class="row">
+    <div class="col-md-4" id="education"><strong>EDUCATION</strong>
+        <div class="timeline">
+            <div v-if="educations" class="flex-container">
+                <div v-for="education of educations" :key="education.name">
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <span class="timeline-marker"></span>
+                            <p class="timeline-title">{{education.name}}</p>
+                            <p class="timeline-date">{{education.date}}</p>
+                            <p>{{education.description}}</p>
+                        </div>
                     </div>
-                </div>
-                <div class="timeline-content">
-                    <h5 class="text-white">{{education.name}}</h5>
-                    <p class="description text-white">{{education.description}}</p>
                 </div>
             </div>
         </div>
-    </div>    
-    </div> 
-</div>
-<div v-else>Loading Education...</div>
+    </div>
 
-<div v-if="experiences" class="flex-container">
-    <div v-for="experience of experiences" :key="experience.name">
-        <div class="h-100 p-5 bg-black border border-4 border-primary rounded-3 mt-3" >
-        <h2 class=" fs-1 fw-bolder text-white">Experience</h2><br>
-        <h4 class="fs-4 fw-bold text-primary">ICT Education Assistant</h4> 
-        <h5 class="fs-5 text-white">Eastville Primary School</h5>  
-        <h5 class="text-secondary">February 2023- March 2023 </h5>
-        <p id="p" class="fs-6 text-white">Provided technical support and managed internal ICT systems <br>
-        Reason for leaving: Joined Life Choices Coding Academy</p><br>
-        </div>
-    </div> 
-</div>
-<div v-else>Loading Experience...</div>
 
-<div v-if="skills" class="flex-container">
-    <div v-for="skill of skills" :key="skill.name">
-        <div class="h-100 p-5 bg-black border border-4 border-primary rounded-3 mt-3" id="skills">
-    <h2 class="fs-1 fw-bolder text-black">Skills</h2><br>
-    <h4 class="text-black">{{skill.name}}</h4>
-    <div class="progress">
-        <div
-        class="progress-bar"
-        role="progressbar"
-        style="width: 84%"
-        aria-valuenow="25"
-
-        aria-valuemin="0"
-        aria-valuemax="100">
-        <p class="text-black">{{skill.rating}}</p>
+    <div class="col-md-4" id="experience">
+        <div class="h-100 p-5 border border-4 border-primary rounded-3 mt-3" > 
+            <h2 class=" fs-1 fw-bolder">Experience</h2><br>
+            <div v-if="experiences" class="flex-container">
+                <div v-for="experience of experiences" :key="experience.name">
+                    <h4 class="fs-4 fw-bold text-primary">{{experience.jobTitle}}</h4> 
+                    <h5 class="fs-5 text-white">{{experience.company}}</h5>  
+                    <h5 class="text-secondary">{{experience.date}} </h5>
+                    <p id="p" class="fs-6 text-white">{{experience.description}} <br>
+                        Reason for leaving: {{experience.reason}} </p><br>
+                </div>
+            </div>
+            <div v-else>Loading Experience...</div>
         </div>
     </div>
+
+
+    <div class="col-md-4" id="skills">
+        <div></div>
+        <div class="block">
+            <p></p>
+        </div>
+
+
+
+        <!-- <div v-if="skills" class="flex-container">
+            <div v-for="skill of skills" :key="skill.name">
+                <div class="h-100 p-5 border border-4 border-primary rounded-3 mt-3" id="skills">
+                    <h2 class="fs-1 fw-bolder text-black">Skills</h2><br>
+                    <h4 class="text-black">{{skill.name}}</h4>
+                    <div class="progress">
+                        <div
+                            class="progress-bar"
+                            role="progressbar"
+                            style="width: 84%"
+                            aria-valuenow="25"
+                            aria-valuemin="0"
+                            aria-valuemax="100">
+                            <p class="text-black">{{skill.rating}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+        <div v-else>Loading Skills...</div> -->
+    </div>
+
+    <div class="col-md-4" id="skills">
+        <div v-if="softSkills" class="flex-container">
+            <div v-for="softSkill of softSkills" :key="softSkill.name">
+                <div class="content">
+                    <div class="block">
+                        {{softSkill.name}}
+                        <br>
+                        {{softSkill.rating}}
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+        
+    </div>
 </div>
-    </div> 
-</div>
-<div v-else>Loading Skills...</div>
+
+
+
+
+
 
 <div v-if="softSkills" class="flex-container">
     <div v-for="softSkill of softSkills" :key="softSkill.name">
@@ -71,7 +98,7 @@
     aria-valuenow="25"
     aria-valuemin="0"
     aria-valuemax="100">
-    {{softSkill.rating}}
+    
     </div>
 </div>
     </div> 
@@ -83,10 +110,6 @@
 </template>
 
 <script>
-// import educationCardComp from '@/components/Education-Comp.vue'
-// import experienceCardComp from '@/components/Experience-Comp.vue'
-// import skillCardComp from '@/components/Skills-Comp.vue'
-// import softSkillCardComp from '@/components/SoftSkills-Comp.vue'
 
 export default {
     computed:{
@@ -111,176 +134,75 @@ export default {
         this.$store.dispatch("fetchsoftSkills")
 
     }, 
-
-    // components:{educationCardComp, experienceCardComp, skillCardComp, softSkillCardComp}
 }
 </script>
 
 <style scoped>
-.main-timeline{
-    position: relative;
+*{
+    background-color: #f8f6dd;
+    color: black !important;
 }
 
-.main-timeline:before{
-    content: "";
-    display: block;
-    width: 2px;
-    height: 100%;
-    background: #c6c6c6;
-    margin: 0 auto;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+.timeline {
+  padding: 10px 10px;
+  border-radius: 12px;
+  background-color: #f8f6dd;
+  border: 2px solid black;
+  margin: 1%;
 }
 
-.main-timeline .timeline{
-    margin-bottom: 40px;
-    position: relative;
+.timeline-content .timeline-header, 
+.timeline-content .timeline-body {
+  padding-left: 26px;
+  border-left: 3px solid blue;
 }
 
-.main-timeline .timeline:after{
-    content: "";
-    display: block;
-    clear: both;
-} 
+.timeline-body {
+  padding-bottom:1px;
+}
 
-.main-timeline .icon{
-    width: 18px;
-    height: 18px;
-    line-height: 18px;
-    margin: auto;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-} 
+.timeline-header {
+  position: relative;
+  display: grid;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 
-.main-timeline .icon:before,
-.main-timeline .icon:after{
-    content: "";
+.timeline-title {
+  font-weight: 600;
+  font-size: 20px;
+  border-bottom: 1px solid green;
+}
+
+.timeline-marker {
+  display:block;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50% / 50%;
+  background: blue;
+  left: -16px;
+  top: 50%;
+  transform: translate(50%,-50%);
+}
+
+.content{
+    height: 400px;
     width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: all 0.5s ease-out 0s;
-} 
-
-.main-timeline .icon:before{
-    background: #000000;
-    border: 2px solid #232323;
-    left: -3px;
-} 
-
-.main-timeline .icon:after{
-    border: 2px solid #000000;
-    left: 3px;
-} 
-
-.main-timeline .timeline:hover .icon:before{
-    left: 3px;
-} 
-
-.main-timeline .timeline:hover .icon:after{
-    left: -3px;
-} 
-
-.main-timeline .date-content{
-    width: 50%;
-    float:left;
-    margin-top: 22px;
     position: relative;
-} 
+    display: block;
+    margin: 50px auto;
+    color: #fff;
+}
 
-.main-timeline .date-content:before{
-    content: "";
-    width: 36.5%;
-    height: 2px;
-    background: #000000;
-    margin: auto 0;
-    position: absolute;
-    top: 0;
-    right: 10px;
-    bottom: 0;
-} 
-
-.main-timeline .date-outer{
-    width: 125px;
-    height: 125px;
-    font-size: 16px;
+.block{
     text-align: center;
-    margin: auto;
-    z-index: 1;
-} 
-
-
-.main-timeline .icon:before {
-    background: #000000;
-    border: 2px solid black;
-    left: -3px
-} 
-
-.main-timeline .icon:after {
-    border: 2px solid blue;
-    left: 3px
-} 
-
-.main-timeline .timeline:hover .icon:before {
-    left: 3px
-}
-
-.main-timeline .timeline:hover .icon:after {
-    left: -3px
-} 
-
-.main-timeline .date-outer:before,
-.main-timeline .date-outer:after {
-    content: "";
-    width: 125px;
-    height: 125px;
-    margin: 0 auto;
-    border-radius: 50%;
-    position: absolute;
-    top: 0;
+    width: 33.33%;
+    height: 50%;
+    background-color: aqua;
     left: 0;
-    right: 0;
-    transition: all 0.5s ease-out 0s
-} 
-
-.main-timeline .date-outer:before {
-    background: #000000;
-    border: 2px solid #232323;
-    left: -6px
-} 
-
-.main-timeline .date-outer:after {
-    border: 2px solid blue;
-    left: 6px
-} 
-
-.main-timeline .timeline:hover .date-outer:before {
-    left: 6px
-} 
-
-.main-timeline .timeline:hover .date-outer:after {
-    left: -6px
-} 
-
-.main-timeline .date {
-    width: 100%;
-    margin: auto;
+    top: 0;
     position: absolute;
-    top: 27%;
-    left: 0
-} 
-
-.main-timeline .timeline-content {
-    width: 50%;
-    padding: 20px 0 20px 50px;
-    float: right
-} 
+}
     
 </style>
