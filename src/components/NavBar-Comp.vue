@@ -32,9 +32,46 @@ export default {
     margin: 5px;
     text-decoration: none;
     color: black;
-    border: 1px solid black;
-    border-radius: 12px;
     padding: 0.5%;
+    font-weight: 500;
+    position: relative;
+}
 
+
+#links::after{
+    content: '';
+    opacity: 0;
+    transition: all 0.2s;
+    height: 2px;
+    width: 100%;
+    background-color: green;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#links:hover::after{
+    opacity: 1;
+    
+}
+
+@media only screen and (max-width:599px){
+    .topnav{
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+}
+
+@media only screen and (max-width:450px){
+    .topnav{
+        margin: 1%;
+        font-size: 10px;
+    }
+}
+@media only screen and (max-width:318px){
+    .topnav{
+        margin: 1%;
+        font-size: 8px;
+    }
 }
 </style>
