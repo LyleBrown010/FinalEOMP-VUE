@@ -9,6 +9,7 @@
             <label>Your Message:</label>
             <textarea name="message"></textarea><br>
             <button id="button-submit" type="submit">Send</button>
+            <input type="reset" value="Reset">
             </form>
         </div>
         <div>
