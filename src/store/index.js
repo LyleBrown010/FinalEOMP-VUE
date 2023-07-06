@@ -8,47 +8,75 @@ export default createStore({
     softSkills: null,
   },
   mutations: {
-    setEducations: (state, educations) => {
-      state.educations = educations;
+    setEducations: (state, value) => {
+      state.educations = value;
     },
     
-    setExperiences: (state, experiences) => {
-      state.experiences = experiences;
+    setExperiences: (state, value) => {
+      state.experiences = value;
     },
 
-    setSkills: (state, skills) => {
-      state.skills = skills; 
+    setSkills: (state, value) => {
+      state.skills = value; 
     }, 
 
-    setsoftSkills: (state, softSkills) => {
-      state.softSkills = softSkills; 
+    setsoftSkills: (state, value) => {
+      state.softSkills = value; 
     }
   },
   actions: {
-    getEducations: async (context) => {
-      fetch("https://lylebrown010.github.io/Data/education.json")
-      .then((res) => res.json())
-      .then((educations) => context.commit("setEducations", educations));
+    async fetchEducations (context){
+      try {
+        let {educations} = await(await fetch("https://lylebrown010.github.io/Data/db.json")).json()
+        if (educations){
+          context.commit("setEducations", educations)
+        }
+        else {alert("error")}
+      }
+
+      catch(e){
+        console.error(error)
+      }
     },
+    async fetchExperiences (context){
+      try {
+        let {experiences} = await(await fetch("https://lylebrown010.github.io/Data/db.json")).json()
+        if (experiences){
+          context.commit("setExperiences", experiences)
+        }
+        else {alert("error")}
+      }
 
-    getExperiences: async (context) => {
-      fetch("https://lylebrown010.github.io/Data/experience.json")
-      .then((res) => res.json())
-      .then((experiences) => context.commit("setExperiences", experiences));
-    }, 
-
-    getSkills: async (context) => {
-      fetch("https://lylebrown010.github.io/Data/skills.json")
-      .then((res) => res.json())
-      .then((skills) => context.commit("setSkills", skills));
+      catch(e){
+        console.error(error)
+      }
     },
+    async fetchSkills (context){
+      try {
+        let {skills} = await(await fetch("https://lylebrown010.github.io/Data/db.json")).json()
+        if (skills){
+          context.commit("setSkills", skills)
+        }
+        else {alert("error")}
+      }
 
-    getsoftSkills: async (context) => {
-      fetch("https://lylebrown010.github.io/Data/softSkills.json")
-      .then((res) => res.json())
-      .then((softSkills) => context.commit("setsoftSkills", softSkills));
-    }
+      catch(e){
+        console.error(error)
+      }
+    },
+    async fetchsoftSkills (context){
+      try {
+        let {softSkills} = await(await fetch("https://lylebrown010.github.io/Data/db.json")).json()
+        if (softSkills){
+          context.commit("setsoftSkills", softSkills)
+        }
+        else {alert("error")}
+      }
 
+      catch(e){
+        console.error(error)
+      }
+    },
 
 
   }, 
