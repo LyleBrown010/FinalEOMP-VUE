@@ -2,7 +2,7 @@
     <div v-if="testimonials" class="flex-container">
         <div v-for="testimonial in testimonials" :key="testimonial.name"> 
             <div class="row d-flex justify-content-evenly">
-                <div class="col-md-2">
+                <div class="col-2" id="section">
                     <div class="blog-card">
                         <div class="meta">
                             <div class="photo">
@@ -46,6 +46,8 @@ export default {
 </script>
 
 <style scoped>
+
+
 .blog-card {
     display: flex;
     flex-direction: column;
