@@ -9,8 +9,8 @@
             <input type="email" name="email">
             <label>Your Message:</label>
             <textarea name="message"></textarea><br>
-            <input type="submit" value="Submit"><br>
-            <input type="reset" value="Reset">
+            <input id="btnAction" type="submit" value="Submit"><br>
+            <input id="btnAction" type="reset" value="Reset">
             </form>
         </div>
         <div>
@@ -18,9 +18,9 @@
                   <img id="myphoto-1" class="center image-fluid" src="https://i.postimg.cc/Hs3cRXc1/C12-C-1-Lyle-Brown-2-crop.jpg" alt="photo">
                   <h4 class="text-center p-4 fs-1 text-black">Lyle Brown</h4>
                   <p class="title text-center text-black" >Aspiring Full-Stack Developer</p><br>
-                  <a class="btn btn-primary" href="mailto: lylebrown010@gmail.com" role="button" target="_blank"><i class="fa fa-envelope"></i> </a>
-                  <a class="btn btn-primary" href="https://github.com/LyleBrown010" role="button" target="_blank"><i class="fa fa-github"></i> </a>
-                  <a class="btn btn-primary" href="https://linkedin.com/in/lylebrown010" role="button" target="_blank"><i class="fa fa-linkedin-square"></i> </a>
+                  <a class="btn btn-success" href="mailto: lylebrown010@gmail.com" role="button" target="_blank"><i class="fa fa-envelope"></i> </a>
+                  <a class="btn btn-success" href="https://github.com/LyleBrown010" role="button" target="_blank"><i class="fa fa-github"></i> </a>
+                  <a class="btn btn-success" href="https://linkedin.com/in/lylebrown010" role="button" target="_blank"><i class="fa fa-linkedin-square"></i> </a>
                 </div>
         </div>
     </div>
@@ -34,6 +34,12 @@ export default {
 
 <style scoped>
 
+#btnAction{
+    font-weight: bold;
+    color: #45a245;
+    border: 3px solid #45a245 ;
+    background-color: #c1fdc1;
+}
 label{
     font-weight: bold;
     float: left;
@@ -54,7 +60,7 @@ label{
 .contact-form{
     padding: 10px;
     height: 80%;
-    border: 2px solid black;
+    border: 5px solid black;
     border-radius: 50px;
 
 }
@@ -71,6 +77,7 @@ label{
     justify-content: center;
     padding: 10px;
     border-radius: 15px;
+
 }
 
 input{
