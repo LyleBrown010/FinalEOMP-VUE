@@ -35,6 +35,8 @@ export default {
     padding: 0.5%;
     font-weight: 500;
     position: relative;
+    font-family: 'Courier Prime', monospace;
+    font-weight: bold;
 }
 
 
