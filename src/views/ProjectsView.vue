@@ -1,4 +1,5 @@
 <template>
+    <div class="text-center"><strong>PROJECTS</strong></div>
     <div v-if="projects" class="flex-container">
         <div v-for="project of projects" :key="project.name">
             <div class="card">
@@ -33,17 +34,33 @@ export default {
 </script>
 
 <style scoped>
+.flex-container{
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    text-align: center;
+    
+
+}
 
 .card{
-    width: 50%;
+    width: 70%;
     margin: 1%;
     border: 2px solid black;
     border-radius: 15px;
     padding: 1%;
+    background-color: #F8F6DD;
+    height: 250px;
     
 }
 a{
     margin: 1%;
+    
+    
+}
+
+button{
+    border-radius: 12px;
 }
 
 #links{
