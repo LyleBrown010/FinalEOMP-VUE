@@ -98,7 +98,7 @@
     </div>
 
     <div class="col-md-12 mt-4">
-      <h1 id="softSkills">SOFT SKILLS</h1>
+      <h1 id="softSkills">SOFT SKILLS [competency level]</h1>
       <div class="content">
         <div id="block" class="block-1">Time Management [Advanced]</div>
         <div id="block" class="block-2">Team Work [Expert]</div>
