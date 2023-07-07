@@ -2,12 +2,15 @@ import { createStore } from 'vuex'
 
 export default createStore({
   state: {
+
     educations: null, 
     experiences: null,
-    skills: null, 
-    softSkills: null,
+    testimonials: null,
+
   },
+
   mutations: {
+
     setEducations: (state, value) => {
       state.educations = value;
     },
@@ -16,13 +19,6 @@ export default createStore({
       state.experiences = value;
     },
 
-    setSkills: (state, value) => {
-      state.skills = value; 
-    }, 
-
-    setsoftSkills: (state, value) => {
-      state.softSkills = value; 
-    }
   },
   actions: {
     async fetchEducations (context){
@@ -51,33 +47,17 @@ export default createStore({
         console.error(error)
       }
     },
-    async fetchSkills (context){
-      try {
-        let {skills} = await(await fetch("https://lylebrown010.github.io/Data/db.json")).json()
-        if (skills){
-          context.commit("setSkills", skills)
-        }
-        else {alert("error")}
-      }
-
-      catch(e){
-        console.error(error)
-      }
-    },
-    async fetchsoftSkills (context){
-      try {
-        let {softSkills} = await(await fetch("https://lylebrown010.github.io/Data/db.json")).json()
-        if (softSkills){
-          context.commit("setsoftSkills", softSkills)
-        }
-        else {alert("error")}
-      }
-
-      catch(e){
-        console.error(error)
-      }
-    },
-
-
+  
   }, 
+    setTestimonials: (state, testimonials) => {
+      state.testimonials = testimonials; 
+    }
+  },
+  actions: {
+    getTestimonials: async(context) => {
+      fetch("https://lylebrown010.github.io/Data/testimonials.json")
+      .then((res) => res.json())
+      .then((testimonials) => context.commit("setTestimonials", testimonials));
+    }
+  },
 })
