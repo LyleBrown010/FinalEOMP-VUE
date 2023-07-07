@@ -6,7 +6,7 @@
             <a :href="project.netlify" target="_blank"><button>NETLIFY</button></a>
             <a :href="project.github" target="_blank"><button>GITHUB</button></a>
         </div>
-        <h5 class="text-center pt-3" >{{ project.name }}</h5>
+        <h5 class="text-center pt-3" id="header" >{{ project.name }}</h5>
         <img :src="project.image" :alt="project.title"     class="d-block w-100" style="width: 100%; height: 100%">
         <p class="text-center">[{{ project.description }}/]</p>
     </div>
@@ -32,6 +32,9 @@ export default {
 </script>
 
 <style scoped>
+#header{
+    font-weight: bold;
+}
 #heading{
     font-family: 'Caprasimo', cursive;
     font-size: 80px;
