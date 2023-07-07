@@ -1,8 +1,8 @@
 <template>
     <div class="text-center"><strong>PROJECTS</strong></div>
     <div v-if="projects" class="flex-container">
-        <div v-for="project of projects" :key="project.name">
-            <div class="card">
+        <div v-for="project of projects" :key="project.name" class="row">
+            <div class="card col-6">
                 <div id="links">
                 <a :href="project.netlify" target="_blank"><button>NETLIFY</button></a>
                 <a :href="project.github" target="_blank"><button>GITHUB</button></a>
@@ -44,8 +44,8 @@ export default {
 }
 
 .card{
-    width: 70%;
-    margin: 1%;
+    width: 100%;
+    margin: auto;
     border: 2px solid black;
     border-radius: 15px;
     padding: 1%;
@@ -68,6 +68,7 @@ button{
 }
 
 #image{
-    width: 100%;
+    max-width: 100%;
+    height: 50%;
 }
 </style>
