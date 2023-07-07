@@ -2,6 +2,20 @@ import { createStore } from 'vuex'
 
 export default createStore({
   state: {
+    testimonials: null,
+  },
+
+  mutations: {
+    setTestimonials: (state, value) => {
+      state.testimonials = value; 
+    }
+  },
+  actions: { 
+    async fetchTestimonials (context){
+      try {
+        let {testimonials} = await(await fetch("https://lylebrown010.github.io/Data/db.json")).json()
+        if (testimonials){
+          context.commit("setTestimonials", testimonials)
 
     projects: null,
   },
@@ -47,6 +61,7 @@ export default createStore({
         let {experiences} = await(await fetch("https://lylebrown010.github.io/Data/db.json")).json()
         if (experiences){
           context.commit("setExperiences", experiences)
+
         }
         else {alert("error")}
       }
@@ -81,4 +96,4 @@ export default createStore({
       .then((testimonials) => context.commit("setTestimonials", testimonials));
     }
   },
-})
+});
