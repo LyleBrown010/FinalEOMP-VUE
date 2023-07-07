@@ -108,7 +108,7 @@
 
 
     <div class="col-md-12" id="experience"><strong>MY WORK EXPERIENCE</strong>
-        <div class="p-2 m-4 border border-4 border-primary rounded-3" > 
+        <div class="p-2 m-4 border border-2 border-black rounded-3" > 
             <div v-if="experiences" class="flex-container d-flex flex-wrap justify-content-evenly">
                 <div v-for="experience of experiences" :key="experience.name">
                     <h4 class="fs-4 fw-bold text-primary">{{experience.jobTitle}}</h4> 

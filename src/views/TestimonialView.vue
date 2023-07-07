@@ -1,9 +1,10 @@
 
 <template>
-    <div v-if="testimonials" class="flex-container">
-        <div v-for="testimonial in testimonials" :key="testimonial.name"> 
-            <div class="row d-flex justify-content-evenly">
-                <div class="col-2" id="section">
+    <h1>Testimonials</h1>
+    <div v-if="testimonials" class="flex-container p-3 d-flex flex-wrap justify-content-center gap-5 ">
+        <div v-for="testimonial in testimonials" :key="testimonial.name" class="m-2 col-4"> 
+            <!-- <div class="row"> -->
+                <!-- <div class="col-2" id="section"> -->
                     <div class="blog-card">
                         <div class="meta">
                             <div class="photo">
@@ -16,8 +17,8 @@
                             <p class="fst-italic"> "{{testimonial.message}}"</p>
                         </div>
                     </div>
-                </div>
-            </div>
+                <!-- </div> -->
+            <!-- </div> -->
         </div>
     </div>
     <div v-else> Loading ... </div>
@@ -46,30 +47,25 @@ export default {
     display: flex;
     flex-direction: column;
     margin: 1rem auto;
-    box-shadow: 0 3px 7px -1px rgba(#000, .1);
-    margin-bottom: 1.6%;
     line-height: 1.4;
     font-family: sans-serif;
     border-radius: 5px;
     overflow: hidden;
     z-index: 0;
-    width: 250px;
+    width: 80%;
     border: 2px solid black;
+    height: 100%;
 }
 
 img{
     width: 100%;
 }
 
-/* .blog-card:hover,  */
-/* .photo{
-    transform: scale(1.3) rotate(4deg);
-} */
 
 .meta {
     position: relative;
     z-index: 0;
-    height: 300px;
+    height: 275px;
 }
 .photo {
     position: absolute;
@@ -77,9 +73,6 @@ img{
     right: 0;
     bottom: 0;
     left: 0;
-    background-size: cover;
-    background-position: center;
-    transition: transform .2s;
 }
 
 .description {
@@ -89,11 +82,6 @@ img{
     z-index: 1;
 }
 
-
-
-.stars {
-text-align: right;
-}
     
 p {
     position: relative;
