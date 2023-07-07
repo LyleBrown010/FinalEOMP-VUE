@@ -33,7 +33,9 @@ export default {
 
 <style scoped>
 #heading{
-    font-size: 40px;
+    font-family: 'Caprasimo', cursive;
+    font-size: 80px;
+    text-align: center;
 }
 #project-card{
     background-color: #F8F6DD;

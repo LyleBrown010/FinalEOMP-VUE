@@ -16,7 +16,7 @@
         <div>
             <div class="card-1 text-center">
                     <img id="myphoto-1" class="center image-fluid" src="https://i.postimg.cc/Hs3cRXc1/C12-C-1-Lyle-Brown-2-crop.jpg" alt="photo">
-                    <h4 class="text-center p-4 fs-1 text-black">Lyle Brown</h4>
+                    <h4 id="myName" class="text-center p-4 fs-1 text-black">Lyle Brown</h4>
                     <p class="title text-center text-black" >Aspiring Full-Stack Developer</p><br>
                     <a class="btn btn-success" href="mailto: lylebrown010@gmail.com" role="button" target="_blank"></a>
                     <a class="btn btn-success" href="https://github.com/LyleBrown010" role="button" target="_blank"><i class="fa fa-github"></i> </a>
@@ -33,6 +33,11 @@ export default {
 </script>
 
 <style scoped>
+#myName{
+  font-size: 100px;
+  font-family: 'Caprasimo', cursive;
+  color: black;
+}
 #btnAction{
     font-weight: bold;
     color: #45a245;

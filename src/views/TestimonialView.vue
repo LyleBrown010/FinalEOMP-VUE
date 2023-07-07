@@ -1,6 +1,6 @@
 
 <template>
-    <h1>Testimonials</h1>
+    <h1 class="heading">Testimonials</h1>
     <div v-if="testimonials" class="flex-container p-3 d-flex flex-wrap justify-content-center gap-5 ">
         <div v-for="testimonial in testimonials" :key="testimonial.name" class="m-2 col-4"> 
             <!-- <div class="row"> -->
@@ -41,7 +41,11 @@ export default {
 </script>
 
 <style scoped>
-
+.heading{
+    font-family: 'Caprasimo', cursive;
+    font-size: 80px;
+    text-align: center;
+}
 
 .blog-card {
     display: flex;
