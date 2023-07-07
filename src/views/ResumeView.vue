@@ -1,7 +1,8 @@
 
 <template>
 <div class="row">
-    <div class="col-md-4" id="education"><strong>EDUCATION</strong>
+    <div class="col-md-4" >
+    <h1  id="education">EDUCATION</h1>
         <div class="timeline">
             <div v-if="educations" class="flex-container">
                 <div v-for="education of educations" :key="education.name">
@@ -17,7 +18,7 @@
             </div>
         </div>
     </div>
-        <div class="col-md-8" id="skills"><strong>SKILLS</strong>
+        <div class="col-md-8" ><h1 id="skills">SKILLS</h1>
         <div class=" p-4 border border-2 border-black rounded-3"
             id="skills">
             <h4 class="text-white">HTML</h4>
@@ -83,7 +84,7 @@
         </div>
     </div>
 
-    <div class="col-md-12" id="softSkills"><strong>SOFT SKILLS</strong>
+    <div class="col-md-12" ><h1 id="softSkills">SOFT SKILLS</h1>
         <div class="content">
             <div id="block" class="block-1">
                 Time Management [Advanced]
@@ -95,7 +96,7 @@
                 Communication [Advanced]
             </div>
             <div id="block" class="block-4">
-                Critical Thinking [Intermediate]
+                Reliability [Intermediate]
             </div>
             <div id="block" class="block-5">
                 Problem-solving [Advanced]
@@ -107,7 +108,7 @@
     </div>
 
 
-    <div class="col-md-12" id="experience"><strong>MY WORK EXPERIENCE</strong>
+    <div class="col-md-12" id="experience" ><h1 id="experience">MY WORK EXPERIENCE</h1>
         <div class="p-2 m-4 border border-2 border-black rounded-3" > 
             <div v-if="experiences" class="flex-container d-flex flex-wrap justify-content-evenly">
                 <div v-for="experience of experiences" :key="experience.name">
@@ -155,6 +156,14 @@ export default {
 *{
     background-color: #f8f6dd;
     color: black !important;
+}
+
+#experience, #education,
+#skills, #softSkills{
+    font-family: 'Caprasimo', cursive;
+    font-size: 30px;
+    text-align: center;
+    margin: auto;
 }
 
 strong{
