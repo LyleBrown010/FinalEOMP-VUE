@@ -57,17 +57,18 @@ export default {
     
 }
 
-@media only screen and (max-width:599px){
+@media only screen and (max-width:620px){
     .topnav{
         margin-left: 1%;
         margin-right: 1%;
+        font-size: 70%;
     }
 }
 
 @media only screen and (max-width:450px){
     .topnav{
         margin: 1%;
-        font-size: 10px;
+        font-size: 9px;
     }
 }
 @media only screen and (max-width:318px){

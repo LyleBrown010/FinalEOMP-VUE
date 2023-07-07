@@ -1,34 +1,54 @@
 <template>
-<br><br>
-<div class="top">
-  <img src="https://i.postimg.cc/Wbxm4yXd/Colorful-Retro-Creative-Portfolio-Presentation-removebg-preview.png" alt="">
-<h1 class="myName">LYLE BROWN.</h1>
-</div>
-
-<div ></div>
-<div class="myIntro">Aspiring Full Stack Developer.</div>
-<br><br>
-
+  <br />
+  <div class="container-fluid">
+    <div class="coverpage" id="cover-page">
+      <h1 class="myName">LYLE BROWN.</h1>
+      <p class="myIntro">Aspiring Full Stack Developer.</p>
+    </div>
+  </div>
 </template>
 <style scoped>
-.top{
+.coverpage {
+  border-radius: 15px;
+  text-align: center;
   display: flex;
-}
-img{
-  width: 10%;
-  height: 10%;
-  display: flex;
-  margin-left: 5%;
-}
-.myName{
-  font-size: 100px;
-  font-family: 'Caprasimo', cursive;
-  color: black;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: underline;
+  text-decoration-color: #45a245;
 }
 
-.myIntro{
-  font-size: 40px;
-  font-family: 'Caprasimo', cursive;
+#cover-page {
+  height: 72vh;
+}
+
+img {
+  width: 50%;
+  height: 60%;
+  display: flex;
+}
+
+.myName {
+  font-size: 100px;
+  font-family: "Caprasimo", cursive;
   color: black;
+  padding-top: 10%;
+  background: transparent;
+}
+
+@media only screen and (max-width: 450px) {
+  .myName {
+    font-size: 60px;
+  }
+  .myIntro {
+    font-size: 20px;
+  }
+}
+
+.myIntro {
+  font-size: 40px;
+  font-family: "Caprasimo", cursive;
+  color: black;
+  background: transparent;
 }
 </style>
