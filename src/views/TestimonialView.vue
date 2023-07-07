@@ -1,3 +1,4 @@
+
 <template>
     <div v-if="testimonials" class="flex-container">
         <div v-for="testimonial in testimonials" :key="testimonial.name"> 
@@ -123,3 +124,4 @@ p {
     color: orange;
 }
 </style>
+
