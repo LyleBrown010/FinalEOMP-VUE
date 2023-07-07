@@ -1,3 +1,4 @@
+
 <template>
 <div class="row">
     <div class="col-md-4" id="education"><strong>EDUCATION</strong>
