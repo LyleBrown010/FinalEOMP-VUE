@@ -16,30 +16,9 @@
             </div>
         </div>
     </div>
-
-
-    <div class="col-md-4" id="experience">
-        <div class="h-100 p-5 border border-4 border-primary rounded-3 mt-3" > 
-            <h2 class=" fs-1 fw-bolder">Experience</h2><br>
-            <div v-if="experiences" class="flex-container">
-                <div v-for="experience of experiences" :key="experience.name">
-                    <h4 class="fs-4 fw-bold text-primary">{{experience.jobTitle}}</h4> 
-                    <h5 class="fs-5 text-white">{{experience.company}}</h5>  
-                    <h5 class="text-secondary">{{experience.date}} </h5>
-                    <p id="p" class="fs-6 text-white">{{experience.description}} <br>
-                        Reason for leaving: {{experience.reason}} </p><br>
-                </div>
-            </div>
-            <div v-else>Loading Experience...</div>
-        </div>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-md-4" id="skills">
-        <div class="h-100 p-5 border border-4 border-primary rounded-3 mt-3"
+        <div class="col-md-8" id="skills"><strong>SKILLS</strong>
+        <div class=" p-4 border border-2 border-black rounded-3"
             id="skills">
-            <h2 class="fs-1 fw-bolder text-white">Skills</h2><br>
             <h4 class="text-white">HTML</h4>
             <div class="progress">
                 <div
@@ -57,11 +36,11 @@
                 <div
                     class="progress-bar"
                     role="progressbar"
-                    style="width: 82%"
+                    style="width: 75%"
                     aria-valuenow="25"
                     aria-valuemin="0"
                     aria-valuemax="100">
-                    82%
+                    <span>Advanced</span>
                 </div>
             </div><br />
             <h4 class="text-white">JavaScript</h4>
@@ -69,11 +48,11 @@
                 <div
                     class="progress-bar"
                     role="progressbar"
-                    style="width: 82%"
+                    style="width: 60%"
                     aria-valuenow="25"
                     aria-valuemin="0"
                     aria-valuemax="100">
-                    82%
+                    <span>Intermediate</span>
                 </div>
             </div><br />
             <h4 class="text-white">Vue.Js</h4>
@@ -81,11 +60,11 @@
                 <div
                     class="progress-bar"
                     role="progressbar"
-                    style="width: 82%"
+                    style="width: 60%"
                     aria-valuenow="25"
                     aria-valuemin="0"
                     aria-valuemax="100">
-                    82%
+                    <span>Intermediate</span>
                 </div>
             </div><br />
             <h4 class="text-white">BootStrap</h4>
@@ -93,26 +72,60 @@
                 <div
                     class="progress-bar"
                     role="progressbar"
-                    style="width: 83%"
+                    style="width: 75%"
                     aria-valuenow="25"
                     aria-valuemin="0"
                     aria-valuemax="100">
-                    83%
+                    <span>Advanced</span>
                 </div>
             </div><br /> <br>
         </div>
     </div>
 
-    <div class="col-md-4" id="softSkills">
+    <div class="col-md-12" id="softSkills"><strong>SOFT SKILLS</strong>
         <div class="content">
-            <div id="block" class="block-1">Block 1</div>
-            <div id="block" class="block-2">Block 2</div>
-            <div id="block" class="block-3">Block 3</div>
-            <div id="block" class="block-4">Block 4</div>
-            <div id="block" class="block-5">Block 5</div>
-            <div id="block" class="block-6">Block 6</div>
+            <div id="block" class="block-1">
+                Time Management [Advanced]
+            </div>
+            <div id="block" class="block-2">
+                Team Work [Expert]
+            </div>
+            <div id="block" class="block-3">
+                Communication [Advanced]
+            </div>
+            <div id="block" class="block-4">
+                Critical Thinking [Intermediate]
+            </div>
+            <div id="block" class="block-5">
+                Problem-solving [Advanced]
+            </div>
+            <div id="block" class="block-6">
+                Adaptability [Advanced]
+            </div>
         </div>
     </div>
+
+
+    <div class="col-md-12" id="experience"><strong>MY WORK EXPERIENCE</strong>
+        <div class="p-2 m-4 border border-4 border-primary rounded-3" > 
+            <div v-if="experiences" class="flex-container d-flex flex-wrap justify-content-evenly">
+                <div v-for="experience of experiences" :key="experience.name">
+                    <h4 class="fs-4 fw-bold text-primary">{{experience.jobTitle}}</h4> 
+                    <h5 class="fs-5 text-white">{{experience.company}}</h5>  
+                    <h5 class="text-secondary">{{experience.date}} </h5>
+                    <p id="p" class="fs-6 text-white">{{experience.description}} <br>
+                        Reason for leaving: {{experience.reason}} </p><br>
+                </div>
+            </div>
+            <div v-else>Loading Experience...</div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+
+
+    
 </div>
 
 </template>
@@ -127,15 +140,11 @@ export default {
         experiences(){
             return this.$store.state.experiences
         },
-        skills(){
-            return this.$store.state.skills
-        }
     },
     
     mounted(){
         this.$store.dispatch("fetchEducations")
         this.$store.dispatch("fetchExperiences")
-        this.$store.dispatch("fetchSkills")
 
     }, 
 }
@@ -147,6 +156,10 @@ export default {
     color: black !important;
 }
 
+strong{
+    text-align: center;
+    margin: auto;
+}
 .timeline {
   padding: 10px 10px;
   border-radius: 12px;
@@ -192,9 +205,12 @@ export default {
     background-color: #c1fdc1;
 } 
 
+.progress{
+    border: 2px solid #45a245;
+}
+
 .progress-bar{
     background-color:#c1fdc1; 
-    border: 2px solid #45a245;
     padding: 1px;
     border-radius: 12px;
 }
@@ -219,7 +235,7 @@ span{
 }
 
 #block:hover{
-    transform: translate3d(0, -1px, 0) scale(1.03);
+    transform: translate3d(0, -1px, 0) scale(1.05);
     transition: all .4s ease;
 }
 
@@ -230,6 +246,8 @@ span{
     left: 0;
     top: 0;
     position: absolute;
+    font-size: 13px;
+    font-weight: bold;
     line-height: 100px;
 }
 .block-2{
@@ -239,6 +257,8 @@ span{
     left: 0;
     top: 50%;
     position: absolute;
+    font-size: 13px;
+    font-weight: bold;
     line-height: 100px;
 }
 .block-3{
@@ -248,6 +268,8 @@ span{
     left: 33%;
     top: 50%;
     position: absolute;
+    font-size: 13px;
+    font-weight: bold;
     line-height: 100px;
 }
 .block-4{
@@ -257,6 +279,8 @@ span{
     left: 33%;
     top: 0;
     position: absolute;
+    font-size: 13px;
+    font-weight: bold;
     line-height: 100px;
 }
 .block-5{
@@ -266,6 +290,8 @@ span{
     left: 67%;
     top: 50%;
     position: absolute;
+    font-size: 13px;
+    font-weight: bold;
     line-height: 100px;
 }
 .block-6{
@@ -275,6 +301,8 @@ span{
     left: 67%;
     top: 0;
     position: absolute;
+    font-size: 13px;
+    font-weight: bold;
     line-height: 100px;
 }
     
