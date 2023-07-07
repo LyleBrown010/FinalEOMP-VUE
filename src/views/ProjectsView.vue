@@ -8,7 +8,7 @@
         </div>
         <h5 class="text-center pt-3" >{{ project.name }}</h5>
         <img :src="project.image" :alt="project.title"     class="d-block w-100" style="width: 100%; height: 100%">
-        <p class="text-center">{{ project.description }}</p>
+        <p class="text-center">[{{ project.description }}/]</p>
     </div>
 </div>
 <div v-else>Loading Projects</div> 
