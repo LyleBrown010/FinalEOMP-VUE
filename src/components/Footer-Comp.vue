@@ -32,6 +32,7 @@ export default {
 p{
     color: white;
     background-color: black;
+    font-family: 'Courier Prime', monospace;
 }
 
 #footer p:hover{
