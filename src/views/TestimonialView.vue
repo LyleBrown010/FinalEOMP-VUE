@@ -13,13 +13,6 @@
                             <h1 class="fw-bold">{{testimonial.name}}</h1>
                             <h2 class="fs-6 text-secondary fw-semibold">{{testimonial.relation}}</h2>
                             <p class="fst-italic"> "{{testimonial.message}}"</p>
-                            <p class="stars ">            
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                            </p>
                         </div>
                     </div>
                 </div>
