@@ -1,5 +1,5 @@
 <template>
-<div class="text-center"><strong>PROJECTS</strong></div>
+<div class="text-center" id="heading"><strong>PROJECTS</strong></div>
 <div v-if="projects" class="m-2 p-3 d-flex flex-wrap justify-content-center">
     <div v-for="project of projects" :key="project.id"      :project="project" id="project-card" class="card m-3 col-5 p-1">
         <div id="links" class="d-flex p-0 gap-2 justify-content-center">
@@ -32,7 +32,9 @@ export default {
 </script>
 
 <style scoped>
-
+#heading{
+    font-size: 40px;
+}
 #project-card{
     background-color: #F8F6DD;
     border: 2px solid black;
@@ -43,6 +45,9 @@ a{
 
 button{
     border-radius: 8px;
+    color: #45a245;
+    border: 3px solid #45a245 ;
+    background-color: #c1fdc1;
 }
 
 #links{
