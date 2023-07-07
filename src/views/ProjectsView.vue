@@ -1,19 +1,17 @@
 <template>
-    <div class="text-center"><strong>PROJECTS</strong></div>
-    <div v-if="projects" class="flex-container">
-        <div v-for="project of projects" :key="project.name" class="row">
-            <div class="card col-6">
-                <div id="links">
-                <a :href="project.netlify" target="_blank"><button>NETLIFY</button></a>
-                <a :href="project.github" target="_blank"><button>GITHUB</button></a>
-            </div>
-            <strong>{{project.name}}</strong>
-            <img id="image" :src="project.image" :alt="project.name">
-            <p>{{project.description}}</p>
-            </div>
+<div class="text-center"><strong>PROJECTS</strong></div>
+<div v-if="projects" class="m-2 p-3 d-flex flex-wrap justify-content-center">
+    <div v-for="project of projects" :key="project.id"      :project="project" id="project-card" class="card m-3 col-5 p-1">
+        <div id="links" class="d-flex p-0 gap-2 justify-content-center">
+            <a :href="project.netlify" target="_blank"><button>NETLIFY</button></a>
+            <a :href="project.github" target="_blank"><button>GITHUB</button></a>
         </div>
+        <h5 class="text-center pt-3">{{ project.name }}</h5>
+        <img :src="project.image" :alt="project.title"     class="d-block w-100" style="width: 100%; height: 100%">
+        <p class="text-center">{{ project.description }}</p>
     </div>
-    <div v-else>Loading .........</div>
+</div>
+<div v-else>Loading Projects</div> 
 
 </template>
 
@@ -34,41 +32,20 @@ export default {
 </script>
 
 <style scoped>
-.flex-container{
-    display: grid;
-    grid-template-columns: auto auto;
-    justify-content: center;
-    text-align: center;
-    
 
-}
-
-.card{
-    width: 100%;
-    margin: auto;
-    border: 2px solid black;
-    border-radius: 15px;
-    padding: 1%;
+#project-card{
     background-color: #F8F6DD;
-    height: 250px;
-    
+    border: 2px solid black;
 }
 a{
-    margin: 1%;
-    
-    
+    margin: 2%;
 }
 
 button{
-    border-radius: 12px;
+    border-radius: 8px;
 }
 
 #links{
     border-radius: 15px;
-}
-
-#image{
-    max-width: 100%;
-    height: 50%;
 }
 </style>
