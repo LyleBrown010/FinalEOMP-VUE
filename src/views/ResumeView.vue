@@ -6,7 +6,7 @@
         <div class="timeline">
             <div v-if="educations" class="flex-container">
                 <div v-for="education of educations" :key="education.name">
-                    <div class="timeline-content">
+                    <div class="timeline-content m-1">
                         <div class="timeline-header">
                             <span class="timeline-marker"></span>
                             <p class="timeline-title">{{education.name}}</p>
@@ -19,7 +19,7 @@
         </div>
     </div>
         <div class="col-md-8" ><h1 id="skills">SKILLS</h1>
-        <div class=" p-4 border border-2 border-black rounded-3"
+        <div class=" p-4 m-1 border border-2 border-black rounded-3"
             id="skills">
             <h4 class="text-white">HTML</h4>
             <div class="progress">
@@ -112,7 +112,7 @@
         <div class="p-2 m-4 border border-2 border-black rounded-3" > 
             <div v-if="experiences" class="flex-container d-flex flex-wrap justify-content-evenly">
                 <div v-for="experience of experiences" :key="experience.name">
-                    <h4 class="fs-4 fw-bold text-primary">{{experience.jobTitle}}</h4> 
+                    <h4 class="fs-4 fw-bold text-primary" id="jobTitle">{{experience.jobTitle}}</h4> 
                     <h5 class="fs-5 text-white">{{experience.company}}</h5>  
                     <h5 class="text-secondary">{{experience.date}} </h5>
                     <p id="p" class="fs-6 text-white">{{experience.description}} <br>
@@ -124,11 +124,6 @@
     </div>
 </div>
 
-<div class="row">
-
-
-    
-</div>
 
 </template>
 
@@ -156,8 +151,13 @@ export default {
 *{
     background-color: #f8f6dd;
     color: black !important;
+    padding: 0 0;
+    margin: 0 0 ;
 }
-
+#jobTitle{
+    text-decoration: underline;
+    text-decoration-color: #45a245;
+}
 #experience, #education,
 #skills, #softSkills{
     font-family: 'Caprasimo', cursive;
@@ -242,11 +242,13 @@ span{
 #block{
     text-align: center;
     transition: all.5s ease;
+    font-size: 40%;
 }
 
 #block:hover{
     transform: translate3d(0, -1px, 0) scale(1.05);
     transition: all .4s ease;
+    font-size: 60%;
 }
 
 .block-1{

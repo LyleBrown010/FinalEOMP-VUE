@@ -1,12 +1,12 @@
 <template>
-<div class="text-center" id="heading"><strong>PROJECTS</strong></div>
+<div class="text-center" ><strong id="heading">PROJECTS</strong></div>
 <div v-if="projects" class="m-2 p-3 d-flex flex-wrap justify-content-center">
     <div v-for="project of projects" :key="project.id"      :project="project" id="project-card" class="card m-3 col-5 p-1">
         <div id="links" class="d-flex p-0 gap-2 justify-content-center">
             <a :href="project.netlify" target="_blank"><button>NETLIFY</button></a>
             <a :href="project.github" target="_blank"><button>GITHUB</button></a>
         </div>
-        <h5 class="text-center pt-3">{{ project.name }}</h5>
+        <h5 class="text-center pt-3" >{{ project.name }}</h5>
         <img :src="project.image" :alt="project.title"     class="d-block w-100" style="width: 100%; height: 100%">
         <p class="text-center">{{ project.description }}</p>
     </div>
